@@ -1,9 +1,6 @@
-# I created a temporary backend for the frontend to test early. Use this as a reference when you're stuck. It's a working example, feel free to fork and change or just to glance at!
+### I created a temporary backend for the frontend to test early. Use this as a reference when you're stuck. It's a working example, feel free to fork and change or just to glance at!
 
 [https://bw-dad-jokes.herokuapp.com/]
-
-*Repository for reference:*
-[https://github.com/nmylynh/bw-dad-jokes-ex]
 
 ## *POST*
 [https://bw-dad-jokes.herokuapp.com/auth/login]
@@ -83,13 +80,13 @@ Ex:
 
 Will give you a list of jokes:
 
- 1.) It does not have restrictions
- 2.) But it will not return private jokes
- 3.) Logging in will return the whole list of jokes (must have valid token)
- 4.) Public is not required. Defaults to true.
- 5.) user_id links to the current logged user.
+- It does not have restrictions
+- But it will not return private jokes
+- Logging in will return the whole list of jokes (must have valid token)
+- Public is not required. Defaults to true.
+- user_id links to the current logged user.
   * store currentUser from token as a state in your frontend application
-  *when you submit a joke, have user_id: currentUser to track user posts
+  * when you submit a joke, have user_id: currentUser to track user posts
   * alternatively, a get request for users will return a user object.
 
 
