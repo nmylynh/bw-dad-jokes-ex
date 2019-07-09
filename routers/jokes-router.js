@@ -7,9 +7,9 @@ const { checkPublic, validateBody, validateId } = require('../middleware/jokes-m
 
 router.get('/', checkPublic, restricted, async (req, res) => {
     try {
-        const roles = await jokesDB.find();
+        const jokes = await jokesDB.find();
 
-        res.status(200).json(roles);
+        res.status(200).json(jokes);
     } catch(err) {
         res.status(500).json({success: false, err});
     }
@@ -19,9 +19,9 @@ router.get('/', checkPublic, restricted, async (req, res) => {
 router.get('/:id', restricted, validateId, async (req, res) => {
     try {
         const {id} = req.params;
-        const role = await jokesDB.findById(id);
+        const joke = await jokesDB.findById(id);
 
-        res.status(200).json(role);
+        res.status(200).json(joke);
     } catch(err) {
         res.status(500).json({success: false, err});
     }
@@ -29,9 +29,9 @@ router.get('/:id', restricted, validateId, async (req, res) => {
 
 router.post('/', restricted, validateBody, async (req, res) => {
     try {
-        const newRole = await jokesDB.add(req.body);
+        const newJoke = await jokesDB.add(req.body);
 
-        res.status(201).json(newRole);
+        res.status(201).json(newJoke);
     } catch(err) {
         res.status(500).json({success: false, err});
     }
@@ -40,11 +40,11 @@ router.post('/', restricted, validateBody, async (req, res) => {
 router.put('/:id', restricted, validateId, validateBody, async (req, res) => {
     try {
         const {id} = req.params;
-        const updateRole = await jokesDB.update(id, req.body);
+        const updateJoke = await jokesDB.update(id, req.body);
 
-        updateRole
-        ? res.status(200).json({ message: 'successfully updated role' })
-        : res.status(404).json({ message: 'role not found'})
+        updateJoke
+        ? res.status(200).json({ message: 'successfully updated joke' })
+        : res.status(404).json({ message: 'joke not found'})
     } catch(err) {
         res.status(500).json({success: false, err});
     }
