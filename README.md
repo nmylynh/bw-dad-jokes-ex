@@ -3,7 +3,13 @@
 [https://bw-dad-jokes.herokuapp.com/]
 
 ## *POST*
+
+#### Login:
+
 [https://bw-dad-jokes.herokuapp.com/auth/login]
+
+#### Register:
+
 [https://bw-dad-jokes.herokuapp.com/auth/register]
 
 ### _Users_
