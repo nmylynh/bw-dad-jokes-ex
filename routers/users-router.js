@@ -7,7 +7,7 @@ const { validateUserBody, validateUserId } = require('../middleware/users-mw');
 
 router.get('/', restricted, async (req, res) => {
     try {
-        const users = await userDB.find();
+        const users = await userDB.get();
 
         res.status(200).json({ users, user: req.user });
     } catch(err) {
@@ -18,7 +18,7 @@ router.get('/', restricted, async (req, res) => {
 router.get('/:id', restricted, validateUserId, async (req, res) => {
     try {
         const { id } = req.params;
-        const user = await userDB.findById(id);
+        const user = await userDB.get(id);
 
         res.status(200).json(user);
     } catch(err) {
@@ -26,12 +26,12 @@ router.get('/:id', restricted, validateUserId, async (req, res) => {
     }
 });
 
-router.get('/:id/roles', async (req, res) => {
+router.get('/:id/jokes', restricted, validateUserId, async (req, res) => {
     try {
         const {id} = req.params;
-        const userRoles = await userDB.getUserRoles(id);
+        const userJokes = await userDB.get(id);
 
-        res.status(200).json(userRoles);
+        res.status(200).json(userJokes);
     } catch (err) {
         res.status(500).json({success: false, err});
     }

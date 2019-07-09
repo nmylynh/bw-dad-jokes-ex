@@ -46,7 +46,7 @@ router.put('/:id', restricted, validateId, validateBody, async (req, res) => {
         ? res.status(200).json({ message: 'successfully updated joke' })
         : res.status(404).json({ message: 'joke not found'})
     } catch(err) {
-        res.status(500).json({success: false, err});
+        res.status(500).json({ message: 'something is funky' });
     }
 });
 

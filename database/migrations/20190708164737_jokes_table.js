@@ -13,7 +13,16 @@ exports.up = function(knex, Promise) {
             .unique()
         table
             .boolean('public')
-            .defaultTo(true);
+            .notNullable
+            .defaultTo(true)  
+        table
+            .integer('user_id')
+            .unsigned()
+            .notNullable()
+            .references('id')
+            .inTable('users')
+            .onDelete('CASCADE')
+            .onUpdate('CASCADE');  
       })
   };
   

@@ -1,14 +1,12 @@
 const db = require('../database/dbConfig.js');
+const helper = require('./helpers/joke-helper');
 
 module.exports = {
-    find,
+    get,
     findById,
     update,
-    remove
-}
-
-function find() {
-    return db('users');
+    remove,
+    getUserJokes
 }
 
 function findById(id) {
@@ -28,3 +26,37 @@ function remove(id) {
     .where({ id })
     .del();
 }
+
+function get(id) {
+    let users = db('users');
+  
+    if (id) {
+      users.where({ id }).first();
+  
+      const promises = [users, this.getUserJokes(id)]; 
+  
+      return Promise.all(promises).then(results => {
+        let [user, jokes] = results;
+
+        if (user) {
+            user.jokes = jokes;
+        
+            return user
+          } else {
+            return null;
+          }
+        });
+    }
+
+    return users
+}
+
+function getUserJokes(id) {
+    let loadJokes = db('jokes')
+        .where('user_id', id) 
+
+    return loadJokes.then(jokes => {
+        return jokes.map(joke => helper.convertBoolean(joke));
+      });  
+  }
+  
