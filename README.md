@@ -91,8 +91,8 @@ Will give you a list of jokes:
 - Logging in will return the whole list of jokes (must have valid token)
 - Public is not required. Defaults to true.
 - `user_id` links to the current logged user.
-  * store currentUser from token as a state in your frontend application
-  * when you submit a joke, have user_id: currentUser to track user posts
+  * store `currentUser` from `token` as a state in your frontend application
+  * when you submit a joke, have `user_id: currentUser` to track user posts
   * alternatively, a get request for users will return a user object.
 
 
