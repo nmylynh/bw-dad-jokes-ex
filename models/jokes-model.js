@@ -28,7 +28,7 @@ function filter() {
     let loadJokes = db('jokes')
         .where({
             public: true,
-          });;
+          });
 
     return loadJokes.then(jokes => {
         return jokes.map(joke => helper.convertBoolean(joke));
