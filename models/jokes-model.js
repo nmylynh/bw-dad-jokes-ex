@@ -1,4 +1,5 @@
 const db = require('../database/dbConfig.js');
+const helper = require('./helpers/joke-helper');
 
 module.exports = {
     find,
@@ -10,7 +11,11 @@ module.exports = {
 }
 
 function find() {
-    return db('jokes');
+    let loadJokes = db('jokes');
+
+    return loadJokes.then(jokes => {
+        return jokes.map(joke => helper.convertBoolean(joke));
+      });
 }
 
 function findById(id) {

@@ -13,7 +13,6 @@ exports.up = function(knex, Promise) {
             .unique()
         table
             .boolean('public')
-            .notNullable()
             .defaultTo(true);
       })
   };
