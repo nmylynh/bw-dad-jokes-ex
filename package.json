@@ -1,5 +1,5 @@
 {
-  "name": "walkthrough-ex",
+  "name": "bw-dad-jokes-ex",
   "version": "1.0.0",
   "description": "example for a backend",
   "main": "index.js",
@@ -27,13 +27,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nmylynh/walkthrough-ex.git"
+    "url": "git+https://github.com/nmylynh/bw-dad-jokes-ex.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nmylynh/walkthrough-ex/issues"
+    "url": "https://github.com/nmylynh/bw-dad-jokes-ex/issues"
   },
-  "homepage": "https://github.com/nmylynh/walkthrough-ex#readme"
+  "homepage": "https://github.com/nmylynh/bw-dad-jokes-ex#readme"
 }
