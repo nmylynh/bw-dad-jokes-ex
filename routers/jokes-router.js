@@ -5,7 +5,7 @@ const { restricted } = require('../middleware/auth-mw.js');
 const { checkPublic, validateBody, validateId } = require('../middleware/jokes-mw')
 
 
-router.get('/', checkPublic, async (req, res) => {
+router.get('/', checkPublic, restricted, async (req, res) => {
     try {
         const roles = await jokesDB.find();
 

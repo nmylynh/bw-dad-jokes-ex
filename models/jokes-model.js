@@ -25,10 +25,14 @@ function findById(id) {
 }
 
 function filter() {
-    return db('jokes')
-    .where({
-        public: true,
-      });
+    let loadJokes = db('jokes')
+        .where({
+            public: true,
+          });;
+
+    return loadJokes.then(jokes => {
+        return jokes.map(joke => helper.convertBoolean(joke));
+      });  
 }
 
 async function add(role) {
