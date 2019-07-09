@@ -53,7 +53,7 @@ Will also return a user object that decodes your current token you access as `us
 
 `Restricted`, will return a specific user with an array of their posted jokes:
 
-[https://bw-dad-jokes.herokuapp.com/users/:id]
+[https://bw-dad-jokes.herokuapp.com/api/users/:id]
 
 Ex:
 
@@ -82,7 +82,7 @@ Ex:
 
 ### _Jokes_
 
-[https://bw-dad-jokes.herokuapp.com/jokes]
+[https://bw-dad-jokes.herokuapp.com/api/jokes]
 
 Will give you a list of jokes:
 
