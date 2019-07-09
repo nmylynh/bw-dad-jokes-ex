@@ -35,8 +35,8 @@ function filter() {
       });  
 }
 
-async function add(role) {
-const [id] = await db('jokes').insert(role);
+async function add(joke) {
+const [id] = await db('jokes').insert(joke);
 
 return findById(id);
 }
