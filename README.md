@@ -42,7 +42,7 @@ Note: will not allow duplicate jokes.
 ### _Users_
 
 `Restricted`, will return a list of users:
-[https://bw-dad-jokes.herokuapp.com/users]
+[https://bw-dad-jokes.herokuapp.com/api/users]
 
 Will also return a user object that decodes your current token you access as `user.id`:
 
