@@ -11,7 +11,9 @@ module.exports = {
 }
 
 function find() {
-    let loadJokes = db('jokes');
+    let loadJokes = db('jokes')
+        .join('users', 'jokes.user_id', 'users.id')
+        .select('jokes.id', 'jokes.question' , 'jokes.answer', 'users.username as created_by');
 
     return loadJokes.then(jokes => {
         return jokes.map(joke => helper.convertBoolean(joke));
