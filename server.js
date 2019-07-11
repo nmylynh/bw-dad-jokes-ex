@@ -12,7 +12,7 @@ server.get('/', (req, res) => {
   });  
 
 
-server.use('/api/auth', auth);
+server.use('/auth', auth);
 server.use('/api/users', users);
 server.use('/api/jokes', jokes)
 
