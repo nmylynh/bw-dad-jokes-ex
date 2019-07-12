@@ -85,7 +85,7 @@ Ex:
 [https://bw-dad-jokes.herokuapp.com/api/jokes]
 
 Will give you a list of jokes:
-
+- it had a create_by property
 - It does not have restrictions
 - But it will not return private jokes
 - Logging in will return the whole list of jokes (must have valid token)
